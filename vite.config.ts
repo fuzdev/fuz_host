@@ -6,6 +6,7 @@ import { execSync } from 'node:child_process';
 import { svelte_preprocess_mdz } from '@fuzdev/mdz/svelte_preprocess_mdz.ts';
 import { svelte_preprocess_fuz_code } from '@fuzdev/fuz_code/svelte_preprocess_fuz_code.ts';
 import { vite_plugin_fuz_css } from '@fuzdev/fuz_css/vite_plugin_fuz_css.ts';
+import { phosphor_theme } from '@fuzdev/fuz_css/themes/phosphor.ts';
 import svelte_docinfo from 'svelte-docinfo/vite.js';
 import { vite_plugin_pkg_json } from '@fuzdev/fuz_ui/vite_plugin_pkg_json.ts';
 
@@ -30,7 +31,7 @@ export default defineConfig({
 			// },
 		}),
 		svelte_docinfo({ onDuplicates: 'throw' }),
-		vite_plugin_fuz_css(),
+		vite_plugin_fuz_css({ theme: phosphor_theme }),
 		vite_plugin_pkg_json()
 	],
 	optimizeDeps: { exclude: ['@fuzdev/blake3-wasm'] },

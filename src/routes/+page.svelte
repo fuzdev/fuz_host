@@ -21,13 +21,10 @@
 		<p>
 			Experimental, with no API yet. It will be published as <code>@fuzdev/fuz_host</code>.
 		</p>
-		<p>
-			<a href={resolve('/about')}>about</a> · <a href={resolve('/docs')}>docs</a> ·
-			<a href="https://github.com/fuzdev/fuz_host">source</a>
-		</p>
 	</section>
-	<section class="box">
+	<section class="box gap_md">
 		<Card href={resolve('/docs')}>docs</Card>
+		<Card href={resolve('/about')}>about</Card>
 	</section>
 	<section>
 		<DocsFooter repo_url={site.repo_url} root_url={FUZ_DEV_URL} />
