@@ -2,8 +2,9 @@
   "name": "@fuzdev/fuz_host",
   "version": "0.0.1",
   "description": "host APIs for JS: filesystem, processes, and the OS, one import across runtimes",
+  "glyph": "🐚",
   "logo": "logo.svg",
-  "logo_alt": "a friendly pixelated spider facing you",
+  "logo_alt": "a brown nautilus shell, spiraling inward",
   "license": "MIT",
   "homepage": "https://host.fuz.dev/",
   "author": {
