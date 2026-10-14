@@ -1,21 +1,28 @@
 {
-  "name": "@fuzdev/fuz_template",
+  "name": "@fuzdev/fuz_host",
   "version": "0.0.1",
-  "description": "a web app template with TypeScript + SvelteKit + optional Rust for the fuz-stack",
-  "glyph": "❄",
+  "description": "host APIs for JS: filesystem, processes, and the OS, one import across runtimes",
   "logo": "logo.svg",
   "logo_alt": "a friendly pixelated spider facing you",
   "license": "MIT",
-  "private": true,
-  "homepage": "https://template.fuz.dev/",
-  "repository": "https://github.com/fuzdev/fuz_template",
+  "homepage": "https://host.fuz.dev/",
+  "author": {
+    "name": "Ryan Atkinson",
+    "email": "mail@ryanatkn.com",
+    "url": "https://www.ryanatkn.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fuzdev/fuz_host.git"
+  },
+  "bugs": "https://github.com/fuzdev/fuz_host/issues",
+  "funding": "https://www.ryanatkn.com/funding",
   "scripts": {
     "start": "gro dev",
     "dev": "gro dev",
     "build": "gro build",
     "check": "gro check",
     "test": "gro test",
-    "molt": "node src/lib/molt.ts",
     "preview": "vite preview",
     "deploy": "gro deploy"
   },
@@ -27,6 +34,14 @@
   "engines": {
     "node": ">=24.14"
   },
+  "keywords": [
+    "host",
+    "runtime",
+    "filesystem",
+    "process",
+    "node",
+    "gro"
+  ],
   "devDependencies": {
     "@fuzdev/blake3-wasm": "^0.2.0",
     "@fuzdev/fuz_code": "^0.52.1",
@@ -39,6 +54,7 @@
     "@sveltejs/acorn-typescript": "^1.0.10",
     "@sveltejs/adapter-static": "^4.0.0",
     "@sveltejs/kit": "^3.0.1",
+    "@sveltejs/package": "^3.0.0",
     "@sveltejs/vite-plugin-svelte": "^7.3.1",
     "@types/estree": "^1.0.8",
     "@types/node": "^24.12.4",
@@ -63,6 +79,20 @@
     "**/*.css"
   ],
   "files": [
-    "dist"
-  ]
+    "dist",
+    "src/lib/**/*.ts",
+    "!src/lib/**/*.test.*",
+    "!dist/**/*.test.*"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    "./*.js": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    },
+    "./*.ts": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    }
+  }
 }

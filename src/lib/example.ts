@@ -7,9 +7,9 @@
  */
 
 /**
- * Greets someone from __NAME__.
+ * Greets someone from fuz_host.
  *
  * @param who - who to greet
  * @returns the greeting
  */
-export const greet = (who: string): string => `hello ${who}, from __NAME__`;
+export const greet = (who: string): string => `hello ${who}, from fuz_host`;
