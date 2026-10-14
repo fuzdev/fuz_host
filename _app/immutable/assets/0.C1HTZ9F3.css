@@ -12,12 +12,13 @@
 	--accent_chroma_scale: 1;
 	--backdrop_color: var(--darken_60);
 	--background_image: none;
-	--bg_80: var(--lighten_80);
+	--bg_80: var(--darken_80);
 	--border_color: var(--shade_30);
-	--border_color_10: oklch(var(--border_color_lightness) var(--border_color_chroma) var(--hue_neutral) / 7%);
-	--border_color_30: oklch(var(--border_color_lightness) var(--border_color_chroma) var(--hue_neutral) / 22%);
-	--border_color_chroma: calc(var(--neutral_chroma) * 2.6667);
-	--border_color_lightness: 0.345;
+	--border_color_10: oklch(var(--border_color_lightness) var(--border_color_chroma) var(--hue_neutral) / 14%);
+	--border_color_30: oklch(var(--border_color_lightness) var(--border_color_chroma) var(--hue_neutral) / 32%);
+	--border_color_chroma: calc(var(--neutral_chroma) * 2.12);
+	--border_color_lightness: 0.857;
+	--border_radius_md: max(var(--border_radius_min), calc(2.1rem * var(--radius_scale)));
 	--border_radius_min: 0rem;
 	--border_radius_sm: max(var(--border_radius_min), calc(1.3rem * var(--radius_scale)));
 	--border_radius_xs: max(var(--border_radius_min), calc(0.8rem * var(--radius_scale)));
@@ -31,15 +32,14 @@
 	--border_width_8: 8px;
 	--button_border_style: var(--border_style);
 	--button_border_style_active: var(--button_border_style);
-	--button_shadow: var(--shadow_inset_bottom_xs) color-mix(in oklab, var(--shadow_color_umbra) var(--shadow_alpha_30), transparent), var(--shadow_inset_top_xs) color-mix(in oklab, var(--shadow_color_highlight) var(--shadow_alpha_30), transparent);
-	--button_shadow_active: var(--shadow_inset_top_sm) color-mix(in oklab, var(--shadow_color_umbra) var(--shadow_alpha_40), transparent), var(--shadow_inset_bottom_sm) color-mix(in oklab, var(--shadow_color_highlight) var(--shadow_alpha_40), transparent);
-	--button_shadow_hover: var(--shadow_inset_bottom_sm) color-mix(in oklab, var(--shadow_color_umbra) var(--shadow_alpha_40), transparent), var(--shadow_inset_top_sm) color-mix(in oklab, var(--shadow_color_highlight) var(--shadow_alpha_40), transparent);
+	--button_shadow: var(--shadow_md) color-mix(in oklab, var(--shadow_color_glow) var(--shadow_alpha_40), transparent);
+	--button_shadow_active: var(--shadow_inset_md) color-mix(in oklab, var(--shadow_color_glow) var(--shadow_alpha_50), transparent);
+	--button_shadow_hover: var(--shadow_lg) color-mix(in oklab, var(--shadow_color_glow) var(--shadow_alpha_60), transparent);
 	--caret_color: var(--accent_50);
-	--chroma_curve: 1.3;
+	--chroma_curve: 1.27;
 	--chroma_scale: 1;
 	--chroma_shape_00: 0;
 	--chroma_shape_10: calc(pow(0.36, var(--chroma_curve)));
-	--chroma_shape_20: calc(pow(0.64, var(--chroma_curve)));
 	--chroma_shape_30: calc(pow(0.84, var(--chroma_curve)));
 	--chroma_shape_40: calc(pow(0.96, var(--chroma_curve)));
 	--chroma_shape_50: 1;
@@ -47,19 +47,16 @@
 	--chroma_shape_70: calc(pow(0.84, var(--chroma_curve)));
 	--chroma_shape_80: calc(pow(0.64, var(--chroma_curve)));
 	--control_radius: var(--border_radius_sm);
-	--darken_05: #00000008;
-	--darken_10: #0000000f;
-	--darken_20: #0000001f;
 	--darken_60: #000000a6;
 	--darken_80: #000000e3;
 	--disabled_opacity: 60%;
 	--distance_md: 800px;
 	--distance_sm: 320px;
-	--duration_2: 0.2s;
-	--fg_05: var(--darken_05);
-	--fg_10: var(--darken_10);
-	--fg_20: var(--darken_20);
-	--font_family: var(--font_family_sans);
+	--duration_2: 0s;
+	--fg_05: var(--lighten_05);
+	--fg_10: var(--lighten_10);
+	--fg_20: var(--lighten_20);
+	--font_family: var(--font_family_mono);
 	--font_family_mono: ui-monospace, monospace;
 	--font_family_sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 	--font_family_serif: Georgia, serif;
@@ -71,10 +68,11 @@
 	--font_size_xl2: calc(1.6rem * var(--font_size_scale) * pow(var(--type_scale_ratio), 3));
 	--font_size_xl3: calc(1.6rem * var(--font_size_scale) * pow(var(--type_scale_ratio), 4));
 	--font_weight: 400;
-	--heading_font_family: var(--font_family_serif);
+	--heading_font_family: var(--font_family_mono);
+	--heading_font_weight: 700;
 	--heading_letter_spacing: normal;
 	--hue_a: 250;
-	--hue_accent: var(--hue_a);
+	--hue_accent: var(--hue_b);
 	--hue_b: 144;
 	--hue_c: 29;
 	--hue_d: 296;
@@ -85,7 +83,7 @@
 	--hue_i: 210;
 	--hue_j: 180;
 	--hue_negative: var(--hue_c);
-	--hue_neutral: var(--hue_f);
+	--hue_neutral: var(--hue_b);
 	--icon_size_lg: 80px;
 	--icon_size_md: 48px;
 	--icon_size_sm: 32px;
@@ -100,15 +98,14 @@
 	--lighten_05: #ffffff08;
 	--lighten_10: #ffffff0f;
 	--lighten_20: #ffffff1f;
-	--lighten_80: #ffffffe3;
 	--line_height_lg: 1.8;
-	--line_height_md: 1.5;
+	--line_height_md: 1.25;
 	--line_height_sm: 1.2;
 	--link_color: var(--accent_60);
 	--link_color_selected: var(--text_color);
 	--negative_50: oklch(var(--palette_lightness_50) calc(var(--palette_chroma_50) * var(--chroma_scale, 1) * var(--negative_chroma_scale, 1)) var(--hue_negative));
 	--negative_chroma_scale: 1;
-	--neutral_chroma: 0.024;
+	--neutral_chroma: 0.08;
 	--outline_color: var(--accent_50);
 	--outline_offset: 1px;
 	--outline_style: solid;
@@ -127,14 +124,13 @@
 	--palette_c_50: oklch(var(--palette_lightness_50) calc(var(--palette_chroma_50) * var(--chroma_scale, 1) * var(--palette_c_chroma_scale, 1)) var(--hue_c));
 	--palette_c_60: oklch(var(--palette_lightness_60) calc(var(--palette_chroma_60) * var(--chroma_scale, 1) * var(--palette_c_chroma_scale, 1)) var(--hue_c));
 	--palette_c_chroma_scale: 1;
-	--palette_chroma_10: min(calc(var(--palette_chroma_min) + (var(--palette_chroma_max) - var(--palette_chroma_min)) * var(--chroma_shape_10)), 0.0382);
-	--palette_chroma_20: min(calc(var(--palette_chroma_min) + (var(--palette_chroma_max) - var(--palette_chroma_min)) * var(--chroma_shape_20)), 0.078);
-	--palette_chroma_50: min(calc(var(--palette_chroma_min) + (var(--palette_chroma_max) - var(--palette_chroma_min)) * var(--chroma_shape_50)), 0.1026);
-	--palette_chroma_60: min(calc(var(--palette_chroma_min) + (var(--palette_chroma_max) - var(--palette_chroma_min)) * var(--chroma_shape_60)), 0.0868);
-	--palette_chroma_70: min(calc(var(--palette_chroma_min) + (var(--palette_chroma_max) - var(--palette_chroma_min)) * var(--chroma_shape_70)), 0.0706);
-	--palette_chroma_80: min(calc(var(--palette_chroma_min) + (var(--palette_chroma_max) - var(--palette_chroma_min)) * var(--chroma_shape_80)), 0.054);
-	--palette_chroma_max: 0.106;
-	--palette_chroma_min: 0.0132;
+	--palette_chroma_10: min(calc(var(--palette_chroma_min) + (var(--palette_chroma_max) - var(--palette_chroma_min)) * var(--chroma_shape_10)), 0.0501);
+	--palette_chroma_50: min(calc(var(--palette_chroma_min) + (var(--palette_chroma_max) - var(--palette_chroma_min)) * var(--chroma_shape_50)), 0.1095);
+	--palette_chroma_60: min(calc(var(--palette_chroma_min) + (var(--palette_chroma_max) - var(--palette_chroma_min)) * var(--chroma_shape_60)), 0.122);
+	--palette_chroma_70: min(calc(var(--palette_chroma_min) + (var(--palette_chroma_max) - var(--palette_chroma_min)) * var(--chroma_shape_70)), 0.1189);
+	--palette_chroma_80: min(calc(var(--palette_chroma_min) + (var(--palette_chroma_max) - var(--palette_chroma_min)) * var(--chroma_shape_80)), 0.0812);
+	--palette_chroma_max: 0.1088;
+	--palette_chroma_min: 0.0214;
 	--palette_d_10: oklch(var(--palette_lightness_10) calc(var(--palette_chroma_10) * var(--chroma_scale, 1) * var(--palette_d_chroma_scale, 1)) var(--hue_d));
 	--palette_d_50: oklch(var(--palette_lightness_50) calc(var(--palette_chroma_50) * var(--chroma_scale, 1) * var(--palette_d_chroma_scale, 1)) var(--hue_d));
 	--palette_d_60: oklch(var(--palette_lightness_60) calc(var(--palette_chroma_60) * var(--chroma_scale, 1) * var(--palette_d_chroma_scale, 1)) var(--hue_d));
@@ -163,21 +159,20 @@
 	--palette_j_50: oklch(var(--palette_lightness_50) calc(var(--palette_chroma_50) * var(--chroma_scale, 1) * var(--palette_j_chroma_scale, 1)) var(--hue_j));
 	--palette_j_60: oklch(var(--palette_lightness_60) calc(var(--palette_chroma_60) * var(--chroma_scale, 1) * var(--palette_j_chroma_scale, 1)) var(--hue_j));
 	--palette_j_chroma_scale: 1;
-	--palette_lightness_00: 0.985;
+	--palette_lightness_00: 0.147;
 	--palette_lightness_10: calc(var(--palette_lightness_00) + (var(--palette_lightness_100) - var(--palette_lightness_00)) * pow(0.1, var(--palette_lightness_curve)));
-	--palette_lightness_100: 0.116;
-	--palette_lightness_20: calc(var(--palette_lightness_00) + (var(--palette_lightness_100) - var(--palette_lightness_00)) * pow(0.2, var(--palette_lightness_curve)));
+	--palette_lightness_100: 0.971;
 	--palette_lightness_50: calc(var(--palette_lightness_00) + (var(--palette_lightness_100) - var(--palette_lightness_00)) * pow(0.5, var(--palette_lightness_curve)));
 	--palette_lightness_60: calc(var(--palette_lightness_00) + (var(--palette_lightness_100) - var(--palette_lightness_00)) * pow(0.6, var(--palette_lightness_curve)));
 	--palette_lightness_70: calc(var(--palette_lightness_00) + (var(--palette_lightness_100) - var(--palette_lightness_00)) * pow(0.7, var(--palette_lightness_curve)));
 	--palette_lightness_80: calc(var(--palette_lightness_00) + (var(--palette_lightness_100) - var(--palette_lightness_00)) * pow(0.8, var(--palette_lightness_curve)));
-	--palette_lightness_curve: 1.15;
+	--palette_lightness_curve: 0.76;
 	--pane_shadow: var(--shadow_bottom_md) color-mix(in oklab, var(--shadow_color_umbra) var(--shadow_alpha_50), transparent);
 	--panel_shadow: none;
-	--radius_scale: 1;
+	--radius_scale: 0;
 	--scrollbar_thumb_color: var(--shade_40);
 	--scrollbar_track_color: transparent;
-	--selection_color: oklch(var(--palette_lightness_20) calc(var(--palette_chroma_20) * var(--chroma_scale, 1) * var(--accent_chroma_scale, 1)) var(--hue_accent) / 40%);
+	--selection_color: oklch(var(--palette_lightness_80) calc(var(--palette_chroma_80) * var(--chroma_scale, 1) * var(--accent_chroma_scale, 1)) var(--hue_accent) / 40%);
 	--shade_00: oklch(var(--shade_lightness_00) calc(var(--neutral_chroma) * var(--chroma_shape_00) + var(--shade_chroma_00)) var(--hue_neutral));
 	--shade_10: oklch(var(--shade_lightness_10) calc(var(--neutral_chroma) * var(--chroma_shape_10)) var(--hue_neutral));
 	--shade_30: oklch(var(--shade_lightness_30) calc(var(--neutral_chroma) * var(--chroma_shape_30)) var(--hue_neutral));
@@ -185,35 +180,37 @@
 	--shade_50: oklch(var(--shade_lightness_50) calc(var(--neutral_chroma) * var(--chroma_shape_50)) var(--hue_neutral));
 	--shade_60: oklch(var(--shade_lightness_60) calc(var(--neutral_chroma) * var(--chroma_shape_60)) var(--hue_neutral));
 	--shade_chroma_00: 0;
-	--shade_lightness_00: 0.97;
+	--shade_lightness_00: 0.22;
 	--shade_lightness_10: calc(var(--shade_lightness_00) + (var(--shade_lightness_100) - var(--shade_lightness_00)) * pow(0.1, var(--shade_lightness_curve)));
-	--shade_lightness_100: 0.171;
+	--shade_lightness_100: 0.97;
 	--shade_lightness_30: calc(var(--shade_lightness_00) + (var(--shade_lightness_100) - var(--shade_lightness_00)) * pow(0.3, var(--shade_lightness_curve)));
 	--shade_lightness_40: calc(var(--shade_lightness_00) + (var(--shade_lightness_100) - var(--shade_lightness_00)) * pow(0.4, var(--shade_lightness_curve)));
 	--shade_lightness_50: calc(var(--shade_lightness_00) + (var(--shade_lightness_100) - var(--shade_lightness_00)) * pow(0.5, var(--shade_lightness_curve)));
 	--shade_lightness_60: calc(var(--shade_lightness_00) + (var(--shade_lightness_100) - var(--shade_lightness_00)) * pow(0.6, var(--shade_lightness_curve)));
-	--shade_lightness_curve: 1.09;
-	--shade_max: #000;
-	--shadow_alpha_30: calc(25% * var(--shadow_alpha_scale));
-	--shadow_alpha_40: calc(36% * var(--shadow_alpha_scale));
-	--shadow_alpha_50: calc(50% * var(--shadow_alpha_scale));
-	--shadow_alpha_70: calc(77% * var(--shadow_alpha_scale));
+	--shade_lightness_curve: 0.92;
+	--shade_max: #fff;
+	--shadow_alpha_30: calc(37% * var(--shadow_alpha_scale));
+	--shadow_alpha_40: calc(47% * var(--shadow_alpha_scale));
+	--shadow_alpha_50: calc(59% * var(--shadow_alpha_scale));
+	--shadow_alpha_60: calc(71% * var(--shadow_alpha_scale));
+	--shadow_alpha_70: calc(83% * var(--shadow_alpha_scale));
 	--shadow_alpha_scale: 1;
 	--shadow_bottom_md: 0 2.5px 6px 0px;
 	--shadow_bottom_sm: 0 1.5px 4px 0px;
 	--shadow_bottom_xl: 0 5px 20px 1px;
 	--shadow_bottom_xs: 0 1px 3px 0px;
-	--shadow_color_highlight: oklch(0.955 0.003 var(--hue_neutral));
-	--shadow_color_umbra: #000;
+	--shadow_color_glow: oklch(0.85 0.14 var(--hue_neutral));
+	--shadow_color_umbra: oklch(0.8 0.12 var(--hue_neutral));
 	--shadow_inset_bottom_sm: inset 0 -1.5px 4px 0px;
-	--shadow_inset_bottom_xs: inset 0 -1px 3px 0px;
+	--shadow_inset_md: inset 0 0 6px 0px;
 	--shadow_inset_top_sm: inset 0 1.5px 4px 0px;
-	--shadow_inset_top_xs: inset 0 1px 3px 0px;
 	--shadow_inset_xs: inset 0 0 3px 0px;
+	--shadow_lg: 0 0 10px 0px;
+	--shadow_md: 0 0 6px 0px;
 	--shadow_top_xs: 0 -1px 3px 0px;
 	--space_lg: calc(1.3rem * var(--space_scale));
 	--space_md: calc(1rem * var(--space_scale));
-	--space_scale: 1;
+	--space_scale: 0.7;
 	--space_sm: calc(0.8rem * var(--space_scale));
 	--space_xl: calc(1.6rem * var(--space_scale));
 	--space_xl2: calc(2.1rem * var(--space_scale));
@@ -236,56 +233,14 @@
 	--text_decoration_hover: underline;
 	--text_decoration_selected: underline;
 	--text_disabled: var(--text_50);
-	--text_lightness_00: 0.97;
-	--text_lightness_100: 0.146;
+	--text_lightness_00: 0.146;
+	--text_lightness_100: 0.97;
 	--text_lightness_50: calc(var(--text_lightness_00) + (var(--text_lightness_100) - var(--text_lightness_00)) * pow(0.5, var(--text_lightness_curve)));
 	--text_lightness_70: calc(var(--text_lightness_00) + (var(--text_lightness_100) - var(--text_lightness_00)) * pow(0.7, var(--text_lightness_curve)));
 	--text_lightness_80: calc(var(--text_lightness_00) + (var(--text_lightness_100) - var(--text_lightness_00)) * pow(0.8, var(--text_lightness_curve)));
-	--text_lightness_curve: 1.19;
-	--text_min: #fff;
-	--type_scale_ratio: 1.272;
-}
-
-:root.dark {
-	--bg_80: var(--darken_80);
-	--border_color_10: oklch(var(--border_color_lightness) var(--border_color_chroma) var(--hue_neutral) / 14%);
-	--border_color_30: oklch(var(--border_color_lightness) var(--border_color_chroma) var(--hue_neutral) / 32%);
-	--border_color_chroma: calc(var(--neutral_chroma) * 2.12);
-	--border_color_lightness: 0.857;
-	--button_shadow: var(--shadow_inset_top_xs) color-mix(in oklab, var(--shadow_color_umbra) var(--shadow_alpha_30), transparent), var(--shadow_inset_bottom_xs) color-mix(in oklab, var(--shadow_color_highlight) var(--shadow_alpha_30), transparent);
-	--button_shadow_active: var(--shadow_inset_bottom_sm) color-mix(in oklab, var(--shadow_color_umbra) var(--shadow_alpha_40), transparent), var(--shadow_inset_top_sm) color-mix(in oklab, var(--shadow_color_highlight) var(--shadow_alpha_40), transparent);
-	--button_shadow_hover: var(--shadow_inset_top_sm) color-mix(in oklab, var(--shadow_color_umbra) var(--shadow_alpha_40), transparent), var(--shadow_inset_bottom_sm) color-mix(in oklab, var(--shadow_color_highlight) var(--shadow_alpha_40), transparent);
-	--chroma_curve: 1.27;
-	--fg_05: var(--lighten_05);
-	--fg_10: var(--lighten_10);
-	--fg_20: var(--lighten_20);
-	--neutral_chroma: 0.025;
-	--palette_chroma_10: min(calc(var(--palette_chroma_min) + (var(--palette_chroma_max) - var(--palette_chroma_min)) * var(--chroma_shape_10)), 0.0501);
-	--palette_chroma_20: min(calc(var(--palette_chroma_min) + (var(--palette_chroma_max) - var(--palette_chroma_min)) * var(--chroma_shape_20)), 0.0673);
-	--palette_chroma_50: min(calc(var(--palette_chroma_min) + (var(--palette_chroma_max) - var(--palette_chroma_min)) * var(--chroma_shape_50)), 0.1095);
-	--palette_chroma_60: min(calc(var(--palette_chroma_min) + (var(--palette_chroma_max) - var(--palette_chroma_min)) * var(--chroma_shape_60)), 0.122);
-	--palette_chroma_70: min(calc(var(--palette_chroma_min) + (var(--palette_chroma_max) - var(--palette_chroma_min)) * var(--chroma_shape_70)), 0.1189);
-	--palette_chroma_80: min(calc(var(--palette_chroma_min) + (var(--palette_chroma_max) - var(--palette_chroma_min)) * var(--chroma_shape_80)), 0.0812);
-	--palette_chroma_max: 0.1088;
-	--palette_chroma_min: 0.0214;
-	--palette_lightness_00: 0.147;
-	--palette_lightness_100: 0.971;
-	--palette_lightness_curve: 0.76;
-	--selection_color: oklch(var(--palette_lightness_80) calc(var(--palette_chroma_80) * var(--chroma_scale, 1) * var(--accent_chroma_scale, 1)) var(--hue_accent) / 40%);
-	--shade_lightness_00: 0.171;
-	--shade_lightness_100: 0.97;
-	--shade_lightness_curve: 0.92;
-	--shade_max: #fff;
-	--shadow_alpha_30: calc(37% * var(--shadow_alpha_scale));
-	--shadow_alpha_40: calc(47% * var(--shadow_alpha_scale));
-	--shadow_alpha_50: calc(59% * var(--shadow_alpha_scale));
-	--shadow_alpha_70: calc(83% * var(--shadow_alpha_scale));
-	--shadow_color_highlight: #000;
-	--shadow_color_umbra: oklch(0.863 0.009 var(--hue_neutral));
-	--text_lightness_00: 0.146;
-	--text_lightness_100: 0.97;
 	--text_lightness_curve: 0.87;
 	--text_min: #000;
+	--type_scale_ratio: 1.15;
 }
 }
 
@@ -997,6 +952,63 @@ body {
 	}
 }
 
+/* Theme Overrides */
+
+@layer fuz.theme.baked {
+:root {
+	color-scheme: dark;
+	--palette_lightness_00: 0.147;
+	--palette_lightness_100: 0.971;
+	--palette_lightness_curve: 0.76;
+	--palette_chroma_min: 0.0214;
+	--palette_chroma_max: 0.1088;
+	--chroma_curve: 1.27;
+	--palette_chroma_10: min(calc(var(--palette_chroma_min) + (var(--palette_chroma_max) - var(--palette_chroma_min)) * var(--chroma_shape_10)), 0.0501);
+	--palette_chroma_50: min(calc(var(--palette_chroma_min) + (var(--palette_chroma_max) - var(--palette_chroma_min)) * var(--chroma_shape_50)), 0.1095);
+	--palette_chroma_60: min(calc(var(--palette_chroma_min) + (var(--palette_chroma_max) - var(--palette_chroma_min)) * var(--chroma_shape_60)), 0.122);
+	--palette_chroma_70: min(calc(var(--palette_chroma_min) + (var(--palette_chroma_max) - var(--palette_chroma_min)) * var(--chroma_shape_70)), 0.1189);
+	--palette_chroma_80: min(calc(var(--palette_chroma_min) + (var(--palette_chroma_max) - var(--palette_chroma_min)) * var(--chroma_shape_80)), 0.0812);
+	--shade_max: #fff;
+	--shade_lightness_100: 0.97;
+	--shade_lightness_curve: 0.92;
+	--fg_05: var(--lighten_05);
+	--fg_10: var(--lighten_10);
+	--fg_20: var(--lighten_20);
+	--bg_80: var(--darken_80);
+	--border_color_lightness: 0.857;
+	--border_color_chroma: calc(var(--neutral_chroma) * 2.12);
+	--border_color_10: oklch(var(--border_color_lightness) var(--border_color_chroma) var(--hue_neutral) / 14%);
+	--border_color_30: oklch(var(--border_color_lightness) var(--border_color_chroma) var(--hue_neutral) / 32%);
+	--text_min: #000;
+	--text_lightness_00: 0.146;
+	--text_lightness_100: 0.97;
+	--text_lightness_curve: 0.87;
+	--selection_color: oklch(var(--palette_lightness_80) calc(var(--palette_chroma_80) * var(--chroma_scale, 1) * var(--accent_chroma_scale, 1)) var(--hue_accent) / 40%);
+	--shadow_alpha_30: calc(37% * var(--shadow_alpha_scale));
+	--shadow_alpha_40: calc(47% * var(--shadow_alpha_scale));
+	--shadow_alpha_50: calc(59% * var(--shadow_alpha_scale));
+	--shadow_alpha_60: calc(71% * var(--shadow_alpha_scale));
+	--shadow_alpha_70: calc(83% * var(--shadow_alpha_scale));
+	--hue_neutral: var(--hue_b);
+	--neutral_chroma: 0.08;
+	--shade_lightness_00: 0.22;
+	--hue_accent: var(--hue_b);
+	--font_family: var(--font_family_mono);
+	--heading_font_family: var(--font_family_mono);
+	--type_scale_ratio: 1.15;
+	--heading_font_weight: 700;
+	--radius_scale: 0;
+	--shadow_color_umbra: oklch(0.8 0.12 var(--hue_neutral));
+	--shadow_color_glow: oklch(0.85 0.14 var(--hue_neutral));
+	--button_shadow: var(--shadow_md) color-mix(in oklab, var(--shadow_color_glow) var(--shadow_alpha_40), transparent);
+	--button_shadow_hover: var(--shadow_lg) color-mix(in oklab, var(--shadow_color_glow) var(--shadow_alpha_60), transparent);
+	--button_shadow_active: var(--shadow_inset_md) color-mix(in oklab, var(--shadow_color_glow) var(--shadow_alpha_50), transparent);
+	--space_scale: 0.7;
+	--line_height_md: 1.25;
+	--duration_2: 0s;
+}
+}
+
 /* Utility Classes */
 
 @layer fuz.utilities {
@@ -1216,6 +1228,7 @@ These are used as modifiers to buttons.
 .mb_xl3 { margin-bottom: var(--space_xl3); }
 .mb_xl5 { margin-bottom: var(--space_xl5); }
 .mb_xl9 { margin-bottom: var(--space_xl9); }
+.my_xl3 { margin-top: var(--space_xl3);	margin-bottom: var(--space_xl3); }
 .gap_xs2 { gap: var(--space_xs2); }
 .gap_md { gap: var(--space_md); }
 .display\:block { display: block; }

@@ -1,0 +1,1 @@
+import{d as e,u as t}from"./DBHDDPsn.js";import{a as n}from"./DK-_geqG.js";var r=n=>t(e(e(n,`https://`),`www.`),`/`);n();export{r as t};
