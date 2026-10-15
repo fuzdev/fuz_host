@@ -23,4 +23,4 @@ gro check # typecheck, test, lint, format check
 
 ## license
 
-[MIT](LICENSE)
+[0BSD](LICENSE)
